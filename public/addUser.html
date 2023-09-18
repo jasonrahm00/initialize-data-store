@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add User</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=WeakRef,BigInt"></script>
+    <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"
+    ></script>
+  </head>
+  <body>
+    <div style="padding: 50px">
+      <button class="btn btn-primary" onclick="add()">Add User</button>
+      <div id="status"></div>
+    </div>
+    <script>
+      function add() {
+        const firstName = faker.name.firstName()
+        const lastName = faker.name.lastName()
+        const name = faker.name.findName(firstName, lastName)
+        const email = faker.internet.email(firstName, lastName)
+        const username = faker.internet.userName(firstName, lastName)
+        const password = faker.internet.password()
+        const phone = faker.phone.phoneNumber()
+        const streetaddress = faker.address.streetAddress()
+        const citystatezip =
+          faker.address.city() +
+          ', ' +
+          faker.address.stateAbbr() +
+          ' ' +
+          faker.address.zipCode()
+        const latitude = faker.address.latitude()
+        const longitude = faker.address.longitude()
+        const avatar = faker.internet.avatar()
+        const dob = new Date()
+
+        const user = {
+          name,
+          dob,
+          email,
+          username,
+          password,
+          phone,
+          streetaddress,
+          citystatezip,
+          latitude,
+          longitude,
+          avatar,
+        }
+
+        const url = 'http://localhost:3000/add'
+        superagent
+          .post(url)
+          .send(user)
+          .end(function (err, res) {
+            if (err) {
+              conosle.log(err)
+            } else {
+              console.log(res)
+              if (res.statusCode === 200) {
+                document.getElementById('status').innerHTML = `
+                <b>Response: Status Code 200</b><br>
+                User: ${name}<br>
+                ${new Date()}
+              `
+              }
+            }
+          })
+      }
+    </script>
+  </body>
+</html>
