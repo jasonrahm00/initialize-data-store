@@ -4,7 +4,9 @@
   "description": "users little application",
   "main": "http_server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install",
+    "start": "node http_server.js"
   },
   "author": "jason rahm",
   "license": "MIT",
@@ -12,5 +14,8 @@
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "lowdb": "^1.0.0"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
