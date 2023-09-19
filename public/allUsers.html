@@ -33,9 +33,8 @@
             res.body.forEach((user) => {
               html += `
                 <div class="card col-md-3" style="min-width: 18rem;">
-                  <img src="${user.avatar}" alt="" className="card-img-top" />
                   <div class="card-body">
-                    <h2 class="card-title">${user.nane}</h2>  
+                    <h2 class="card-title">${user.name}</h2>  
                     <ul class="list-group">
                       <li class="list-group-item">Dob: ${user.dob}</li>
                       <li class="list-group-item">email: ${user.email}</li>
@@ -44,7 +43,7 @@
                       <li class="list-group-item">phone: ${user.phone}</li>
                       <li class="list-group-item">address: ${user.streetaddress}</li>
                       <li class="list-group-item">citystatezip: ${user.citystatezip}</li>
-                      <li class="list-group-item">lat/long: ${user.latitude},${user.logitutde}</li>
+                      <li class="list-group-item">lat/long: ${user.latitude},${user.longitutde}</li>
                     </ul>
                   </div>
                 </div>
