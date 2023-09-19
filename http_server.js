@@ -5,7 +5,7 @@ const fs = require('lowdb/adapters/FileSync')
 const bodyParser = require('body-parser')
 const adapter = new fs('db.json')
 const db = low(adapter)
-const port = 3000
+let port = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
