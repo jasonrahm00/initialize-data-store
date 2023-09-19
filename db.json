@@ -1,3 +1,30 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "Miss Royce Ullrich",
+      "dob": "2023-09-19T01:40:37.499Z",
+      "email": "Royce.Ullrich11@hotmail.com",
+      "username": "Royce65",
+      "password": "GgE9aJ8wmdzi9el",
+      "phone": "638.020.3027",
+      "streetaddress": "0265 Metz Fork",
+      "citystatezip": "Schambergerton, OR 22645-0101",
+      "latitude": "-88.8177",
+      "longitude": "-88.0315",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/llun/128.jpg"
+    },
+    {
+      "name": "Izaiah Will",
+      "dob": "2023-09-19T01:41:13.188Z",
+      "email": "Izaiah_Will@yahoo.com",
+      "username": "Izaiah5",
+      "password": "fRspcMq2UTanJC1",
+      "phone": "1-623-748-8249 x32768",
+      "streetaddress": "473 Greyson Junctions",
+      "citystatezip": "South Norenestad, NM 99679",
+      "latitude": "62.0027",
+      "longitude": "174.4956",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/sreejithexp/128.jpg"
+    }
+  ]
 }
